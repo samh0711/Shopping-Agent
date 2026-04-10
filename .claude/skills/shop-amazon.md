@@ -1,13 +1,13 @@
 ---
 name: shop-amazon
-description: Browse and purchase items on Amazon.ca via Chrome DevTools MCP. Use when the user asks to find, compare, or buy products on Amazon.
+description: Browse and purchase items on Amazon.com via Chrome DevTools MCP. Use when the user asks to find, compare, or buy products on Amazon.
 scripts: []
 ---
 
 # Amazon Shopping via Chrome DevTools
 
 ## Goal
-Search, browse, and purchase products on Amazon.ca using the Chrome DevTools MCP server. The agent drives a real Chrome browser to navigate Amazon, find products, add them to cart, and complete checkout — with explicit user approval before any purchase.
+Search, browse, and purchase products on Amazon.com using the Chrome DevTools MCP server. The agent drives a real Chrome browser to navigate Amazon, find products, add them to cart, and complete checkout — with explicit user approval before any purchase.
 
 ## CRITICAL RULES
 
@@ -48,7 +48,7 @@ sleep 1
 
 Then open Amazon:
 ```
-mcp__chrome-devtools__new_page → url: "https://www.amazon.ca"
+mcp__chrome-devtools__new_page → url: "https://www.amazon.com"
 ```
 
 ### 2. Verify Login Status
@@ -59,7 +59,7 @@ mcp__chrome-devtools__screenshot
 ```
 
 Look for "Hello, [Name]" in the top nav. If not logged in:
-- Navigate to the sign-in page: `https://www.amazon.ca/ap/signin`
+- Navigate to the sign-in page: `https://www.amazon.com/ap/signin`
 - **Tell the user to log in manually** — never type credentials yourself
 - Wait for user confirmation that they're signed in
 - Take another screenshot to verify
@@ -68,7 +68,7 @@ Look for "Hello, [Name]" in the top nav. If not logged in:
 
 Navigate to search or use the search bar:
 ```
-mcp__chrome-devtools__navigate → url: "https://www.amazon.ca/s?k=<search+terms>"
+mcp__chrome-devtools__navigate → url: "https://www.amazon.com/s?k=<search+terms>"
 ```
 
 Take a screenshot to see results. Present the top options to the user with:
@@ -99,7 +99,7 @@ Take a screenshot to confirm it was added. Show the user the cart summary.
 
 ### 6. Proceed to Checkout
 
-Navigate to cart: `https://www.amazon.ca/gp/cart/view.html`
+Navigate to cart: `https://www.amazon.com/gp/cart/view.html`
 
 Take a screenshot. Show the user:
 - All items in cart
@@ -151,7 +151,7 @@ Click "Place your order" only after explicit approval. Take a screenshot of the 
 
 ## Notes
 
-- Amazon.ca is the target site (user is in Los Alamos, NM)
+- Amazon.com is the target site (user is in Los Alamos, NM)
 - User has Prime (look for Prime delivery options)
 - The user's Chrome profile at `~/.cache/chrome-devtools-mcp/chrome-profile` may retain login sessions between uses
 - Always prefer screenshot-driven navigation — take a screenshot after every major action to verify state

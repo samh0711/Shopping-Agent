@@ -5,7 +5,7 @@
 This repo contains Claude Code skills for Amazon product research. The primary workflow is:
 
 1. Accept a product query and user-defined scoring criteria
-2. Use Chrome DevTools MCP to browse Amazon.ca and collect product data
+2. Use Chrome DevTools MCP to browse Amazon.com and collect product data
 3. Score each product against the criteria
 4. Write results to an Excel file (`.xlsx`) and return it to the user
 
@@ -23,8 +23,8 @@ When producing the results spreadsheet, always use this column structure:
 |---|---|
 | Rank | Overall rank by weighted score (1 = best) |
 | Product Name | Full listing title |
-| URL | Direct Amazon.ca product link |
-| Price | Listed price in CAD |
+| URL | Direct Amazon.com product link |
+| Price | Listed price in USD |
 | Rating | Star rating (out of 5) |
 | Review Count | Number of customer reviews |
 | Prime | Yes / No |
@@ -49,4 +49,4 @@ When producing the results spreadsheet, always use this column structure:
 
 ## Site Target
 
-Amazon.ca (Canadian storefront). The user has a Prime membership — prioritize Prime-eligible results.
+Amazon.com (US storefront). The user is located in Los Alamos, NM and has a Prime membership — prioritize Prime-eligible results.
